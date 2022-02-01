@@ -8,14 +8,17 @@ import {Goal} from '../goal'
 })
 export class GoalsComponent implements OnInit {
   goals: Goal[] =[
-    {id:1, name:'Watch finding Nemo',description:'Find an online version and watch merlin find his son'},
-    {id:2,name:'Buy Cookies',description:'I have to buy cookies for the parrot'},
-    {id:3,name:'Get new Phone Case',description:'Diana has her birthday coming up soon'},
-    {id:4,name:'Get Dog Food',description:'Pupper likes expensive sancks'},
-    {id:5,name:'Solve math homework',description:'Damn Math'},
-    {id:6,name:'Plot my world domination plan',description:'Cause I am an evil overlord'},
-  ];
+    new Goal(1, 'Watch finding', 'find an online version '),
+    new Goal(2, 'going to the market', 'buy cabbages'),
+    new Goal (3, 'reading novel', 'the lost island'),
+    new Goal(4, 'doing assignment', 'angular content'),
+    new Goal (5, 'exercise', 'physical'),
+    new Goal(6, 'sleeping',"2 hours")
 
+  ];
+  toggleDetails(index: number){
+    this.goals[index].showDescription= !this.goals[index].showDescription;
+  }
   constructor() { }
 
   ngOnInit(): void {

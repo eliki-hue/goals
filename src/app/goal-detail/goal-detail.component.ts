@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Goal} from '../goal'
 
 @Component({
@@ -7,6 +7,8 @@ import {Goal} from '../goal'
   styleUrls: ['./goal-detail.component.css']
 })
 export class GoalDetailComponent implements OnInit {
+
+  @Input() goal! :Goal
 
   constructor() { }
 
