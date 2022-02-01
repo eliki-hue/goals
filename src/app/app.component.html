@@ -8,12 +8,6 @@
 </head>
 <body>
   <h1>my day  goals</h1>
-  <div>
-    <ul>
-      <li *ngFor ='let goal of goals'>{{goal.id}} {{goal.name}}
-      </li>
-    </ul>
-    <p *ngIf='goals.length > 5'>Your goals are too many</p>
-  </div>
+ <app-goals> </app-goals>
 </body>
 </html>
