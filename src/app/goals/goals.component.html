@@ -1,12 +1,41 @@
-<div>
-    <ul>
-      <div *ngFor ='let goal of goals; let i=index'>
-        <li appStrikethrough>{{goal.id}} {{goal.name}} due on {{goal.completeDate |date|uppercase}}
-          <button (click)="toggleDetails(i)">Toggle Button</button>
-          <app-goal-detail *ngIf="goal.showDescription" [goal]='goal' (iscomplete)="deleteGoal($event,i)"></app-goal-detail>
-        </li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/home/elijah/Desktop/moringaschoolprojects/core-module/Goals/src/assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="/home/elijah/Desktop/moringaschoolprojects/core-module/Goals/src/assets/bootstrap/css/bootstrap-grid.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+     <div class="col-sm-6">1</div>
+     <div class="col-sm-6">2</div>
+     <div class="" style="background-color: aqua;">
+      <div>
+        <ul>
+          <div *ngFor ='let goal of goals; let i=index'>
+            <li appStrikethrough>{{goal.id}} {{goal.name}} due on {{goal.completeDate |date|uppercase}}
+              <button (click)="toggleDetails(i)">Toggle Button</button>
+              <app-goal-detail *ngIf="goal.showDescription" [goal]='goal' (iscomplete)="deleteGoal($event,i)"></app-goal-detail>
+            </li>
+          </div>
+          
+        </ul>
+        <div style="background-color: rgb(167, 148, 185);">
+          <p *ngIf='goals.length > 5' style="color:white; font-size: larger; font-weight: bolder;">Your goals are too many</p>
+        </div>
+        
       </div>
-      
-    </ul>
-    <p *ngIf='goals.length > 5'>Your goals are too many</p>
+    </div>
+    <div class="col-md-6">
+      <app-goal-form></app-goal-form>
+    </div>
+    </div>
+  
   </div>
+  
+  
+</body>
+</html>
