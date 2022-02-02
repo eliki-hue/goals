@@ -21,7 +21,7 @@ export class GoalsComponent implements OnInit {
   }
   deleteGoal(iscomplete: any, index: number){
     if(iscomplete){
-      let toDelete= confirm('Are you sure you want to Delete ${this.goals[index].name}?')
+      let toDelete= confirm(`Are you sure you want to delete ${this.goals[index].name}`)
       if (toDelete){
         this.goals.splice(index,1)
       }
