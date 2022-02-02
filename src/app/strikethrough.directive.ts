@@ -9,10 +9,10 @@ export class StrikethroughDirective {
   constructor(private Elem:ElementRef) {}
 
   @HostListener('click') onClicks(){
-    this.textDeco('line-through')
+    this.textDeco('None')
   }
   @HostListener('dblclick') onDoubleClicks(){
-    this.textDeco('None')
+    this.textDeco('line-through')
   }
   
   private textDeco(Action:string){
